@@ -4,10 +4,10 @@ import asyncio
 from typing import List
 
 
-async def wait_n(n: int, max_delay: int = 10) -> List[float]:
+async def task_wait_n(n: int, max_delay: int = 10) -> List[float]:
     """task def"""
-    wait_random = __import__('3-tasks').wait_random
-    task = [wait_random(max_delay) for _ in range(n)]
+    task_wait_random = __import__('3-tasks').task_wait_random
+    task = [task_wait_random(max_delay) for _ in range(n)]
     delays = await asyncio.gather(*task)
 
     return sorted(delays)
