@@ -1,0 +1,2 @@
+// taks 4
+db.school.find({name: 'Holberton school'})
