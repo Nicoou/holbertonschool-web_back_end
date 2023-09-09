@@ -17,7 +17,7 @@ class Server:
 
     def __init__(self):
         self.__dataset = None
-        self.__index_dataset = None
+        self.__indexed_dataset = None
 
     def dataset(self) -> List[List]:
         """def dataset"""
@@ -31,11 +31,11 @@ class Server:
 
     def indexed_dataset(self) -> Dict[int, List]:
         """def index"""
-        if self.__index_dataset is None:
+        if self.__indexed_dataset is None:
             dataset = self.dataset()
             truncated_dataset = dataset[:1000]
-            self.__index_dataset = {n: dataset[n] for n in range(len(dataset))}
-        return self.__index_dataset
+            self.__indexed_dataset = {n: dataset[n] for n in range(len(dataset))}
+        return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """def hyper"""
