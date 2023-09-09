@@ -2,7 +2,6 @@
 """ task 1 """
 
 import csv
-import math
 from typing import List
 
 
@@ -26,9 +25,9 @@ class Server:
                 read = csv.reader(f)
                 dataset = [row for row in read]
             self.__dataset = dataset[1:]
-        
+
         return self.__dataset
-    
+
     def get_page(self, page: int = 1, page_size: int = 10) -> list[list]:
         """def get"""
         assert isinstance(page_size, int)
@@ -43,8 +42,6 @@ class Server:
                 return []
             for n in range(index[0] + 1, index[1] + 1):
                 split = read[n].split(",")
-                split[len(read) - 1] = split[len(read) - 1].strip(
-                    "\n"
-                )
+                split[len(split) - 1] = split[len(split) - 1].strip("\n")
                 content.append(split)
         return content
