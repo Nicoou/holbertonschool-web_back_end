@@ -31,7 +31,7 @@ class Server:
 
     def indexed_dataset(self) -> Dict[int, List]:
         """def index"""
-        if self.__indexed_dataset is None:
+        if self.__index_dataset is None:
             dataset = self.dataset()
             truncated_dataset = dataset[:1000]
             self.__index_dataset = {n: dataset[n] for n in range(len(dataset))}
