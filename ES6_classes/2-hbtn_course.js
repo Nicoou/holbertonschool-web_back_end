@@ -32,7 +32,7 @@ export default class HolbertonCourse {
   }
 
   set students(value) {
-    if (!Array.isArray(value) || value.some(item => typeof item !== 'string')) {
+    if (!Array.isArray(value) || value.some((item) => typeof item !== 'string')) {
       throw new TypeError('Expected an array of strings');
     }
     this._students = value;
